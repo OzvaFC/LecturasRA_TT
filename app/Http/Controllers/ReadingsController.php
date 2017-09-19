@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Reading;
 
 class ReadingsController extends Controller
 {
@@ -13,6 +14,7 @@ class ReadingsController extends Controller
      */
     public function index()
     { 
+        
         return view('admin.showReadings');
     }
 
@@ -34,7 +36,13 @@ class ReadingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reading = new Reading();
+        $reading->name = $request->input('name');
+        $reading->description = $request->input('description');
+        $reading->image = $request->input('image');
+        $reading->save();
+
+        return redirect()->route('reading.index');
     }
 
     /**
@@ -45,7 +53,9 @@ class ReadingsController extends Controller
      */
     public function show($id)
     {
-        //
+        $reading = Reading::findOrFail($id);
+
+        #return view('')
     }
 
     /**

@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Classes\GetAllTargets;
-use App\User;
 
-class VuforiaServiceController extends Controller
+class MultimediaElementsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +13,7 @@ class VuforiaServiceController extends Controller
      */
     public function index()
     {
-        //include (app_path('Classes\GetAllTargets.php'));
-        echo "<div>";
-        $getTargets = new GetAllTargets();
-        $getTargets->GetAllTargets();
-        echo "</div>";
-        //return view('admin.showReadings', compact('user'));
+        echo "sdfsdf";
     }
 
     /**
